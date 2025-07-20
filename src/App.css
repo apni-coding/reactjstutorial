@@ -1,38 +1,132 @@
-.App {
-  text-align: center;
+/* ====== Global design tokens (feel free to adjust) ====== */
+:root {
+  --clr-bg: #f9fafb;
+  --clr-surface: #ffffff;
+  --clr-primary: #2563eb;          /* indigo‑600 */
+  --clr-primary-dark: #1e40af;     /* indigo‑800 */
+  --clr-text: #111827;             /* gray‑900 */
+  --clr-text-subtle: #6b7280;      /* gray‑500 */
+
+  --radius: 1rem;                  /* 16 px rounded cards / buttons */
+  --shadow: 0 4px 8px rgb(0 0 0 / .06);
+  --transition: 200ms ease;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+/* ====== Page wrapper ====== */
+.repo‑wrapper {    
+  margin-inline: auto;
+  padding: 1.5rem 1.25rem;
+  background: var(--clr-bg);
   min-height: 100vh;
+}
+
+.repo‑title {
+  font-size: clamp(1.75rem, 2.5vw + 1rem, 2.5rem);
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--clr-primary-dark);
+}
+
+/* ====== List & list items ====== */
+.repo‑list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 1rem;
+}
+
+.repo‑item {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+
+  background: var(--clr-surface);
+  padding: 1.25rem 1.5rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.repo‑item:hover,
+.repo‑item:focus-within {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgb(0 0 0 / .08);
+}
+
+/* ====== Text & links ====== */
+.repo‑info {
+  flex: 1 1 15rem;
+}
+
+.repo‑name {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--clr-text);
+}
+
+.repo‑link {
+  font-size: 0.925rem;
+  color: var(--clr-primary);
+  text-decoration: none;
+}
+
+.repo‑link:hover,
+.repo‑link:focus {
+  text-decoration: underline;
+}
+
+/* ====== CTA button ====== */
+.download‑btn {
+  appearance: none;
+  cursor: pointer;
+  border: none;
+  padding: 0.6rem 1.25rem;
+  border-radius: calc(var(--radius) / 1.5);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #fff;
+  background: var(--clr-primary);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: background var(--transition), transform var(--transition);
+  margin-right: 20px;
+}
+.center{
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+}
+.home-cta{
+  appearance: none;
+  cursor: pointer;
+  border: none;
+  padding: 0.6rem 1.25rem;
+  border-radius: calc(var(--radius) / 1.5);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #fff;
+  background: var(--clr-primary);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: background var(--transition), transform var(--transition);
+  margin-right: 20px;
+  margin-top: 40px;
 }
 
-.App-link {
-  color: #61dafb;
+.download‑btn:hover,
+.download‑btn:focus {
+  background: var(--clr-primary-dark);
+  transform: translateY(-1px);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.download‑btn:active {
+  transform: translateY(0);
 }
+
+

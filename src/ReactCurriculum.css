@@ -1,5 +1,5 @@
 .curriculum-container {
-  max-width: 600px;
+  max-width: 50%;
   margin: 40px auto;
   padding: 20px;
   background-color: #ffffff;
@@ -32,6 +32,8 @@
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.2s ease-in-out;
+  display: flex;
+  justify-content: space-between;
 }
 
 .curriculum-toggle:hover {

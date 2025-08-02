@@ -1,5 +1,23 @@
+/** JAVASCRIPT */
 const heading = document.createElement("h2");
 heading.textContent = "Hello World";
 heading.className = "header";
 
-document.getElementById("root").append(heading);
+// console.log("JavaScript Element", heading)
+
+// document.getElementById("root").append(heading);
+
+
+/** REACT */
+const reactHeading = React.createElement("h2", {className : "head", id : "heading", children: "Hello React!"});
+
+ReactDOM.createRoot(document.getElementById("root")).render(reactHeading);
+
+
+// console.log("React Element", reactHeading)
+
+/*
+1. type of element (h1, h2, div, span)
+2. object -> class, id, attributes //null
+3. text inside the element
+*/

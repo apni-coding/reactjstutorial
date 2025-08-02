@@ -1,70 +1,118 @@
-# Getting Started with Create React App
+# 🚀 React.js Mastery Course
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to the **React.js Mastery Course** – your complete guide to becoming a React Developer from scratch. This curriculum covers everything from the fundamentals of React to advanced concepts like Redux Toolkit and Firebase integration.
 
-## Available Scripts
+## 📺 Watch the Course
 
-In the project directory, you can run:
+📌 Access the full video series here: [React.js Mastery Series](https://shorturl.at/SLSxp)
 
-### `npm start`
+## 📚 Course Structure
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The course is divided into modules with real-world projects and concept-focused lessons.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## 🧠 Modules Overview
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 1. Introduction to React
+- ✅ What is React? Key Features
+- ✅ SPAs vs MPAs
+- ✅ How React works internally (Virtual DOM & Babel)
+- ✅ Creating Your First React Element
+- ✅ Components, Fragments & Dev Tools
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 2. Learning JSX
+- ✅ Embedding JS Expressions in JSX
+- ✅ Rendering Arrays and Objects
+- ✅ Conditional Rendering with Ternary, AND, OR
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 3. Project: Score-Keeper App
+- ✅ Event Handling in JSX
+- ✅ Controlled Inputs with Forms
+- ✅ Accessing Inputs using `refs`
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 4. Create-React-App Workflow
+- ✅ CDNs vs Module Bundlers (Webpack)
+- ✅ Installing Required Tools (Node, npm, CRA)
+- ✅ Folder Structure Overview
+- ✅ Importing and Exporting Components
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 5. React Components - Part 1
+- ✅ Class-Based Components
+- ✅ Movie App Mini Project
+- ✅ Introduction to State Management
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+### 6. React Components - Part 2
+- ✅ Understanding Props
+- ✅ Reusability & Data Flow via Props
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### 7. Styling in React
+- ✅ Problems with Global CSS
+- ✅ Inline Styling & Style Objects
+- ✅ CSS Modules
+- ✅ Styled-Components & Dynamic Styling
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### 8. Component Lifecycle Methods
+- ✅ Lifecycle Overview
+- ✅ Mounting, Updating, and Unmounting Phases
+- ✅ Performing Side Effects
+- ✅ Error Boundaries
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### 9. React Hooks
+- ✅ `useState`, `useEffect`, and other built-in hooks
+- ✅ Writing Cleaner Functional Components
 
-### Making a Progressive Web App
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### 10. Firebase Integration
+- ✅ What is Firebase & How It Works
+- ✅ Firebase Project Setup
+- ✅ CRUD Operations with Firebase
+- ✅ Querying Data in Real-Time
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### 11. React Router v7
+- ✅ Setting Up Routes
+- ✅ Navigation Between Pages
+- ✅ Route Parameters & Nested Routes
 
-### Deployment
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### 12. Context API
+- ✅ Global State without Prop Drilling
+- ✅ Creating and Consuming Contexts
 
-### `npm run build` fails to minify
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### 13. Redux in React
+- ✅ What is Redux? Why Use It?
+- ✅ Understanding Store, Actions, Reducers
+- ✅ Async Actions using Thunk Middleware
+
+---
+
+### 14. Redux Toolkit
+- ✅ Modern Redux with RTK
+- ✅ Creating Slices, Async Thunks, and Simplified State Management
+
+---
+
+
+

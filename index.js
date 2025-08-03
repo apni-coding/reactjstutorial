@@ -12,7 +12,7 @@ heading.className = "header";
 // const reactHeading = React.createElement("h2", {className : "head", id : "heading", children: "Hello React!"});
 
 /* REACT with JSX  */
-const jsxHeading = (<h2>Hello JSX!</h2>);
+const jsxHeading = (<h2 className="head">Hello JSX!</h2>);
 
 ReactDOM.createRoot(document.getElementById("root")).render(jsxHeading);
 

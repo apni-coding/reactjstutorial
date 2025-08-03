@@ -8,10 +8,13 @@ heading.className = "header";
 // document.getElementById("root").append(heading);
 
 
-/** REACT */
-const reactHeading = React.createElement("h2", {className : "head", id : "heading", children: "Hello React!"});
+/** REACT  with JS*/
+// const reactHeading = React.createElement("h2", {className : "head", id : "heading", children: "Hello React!"});
 
-ReactDOM.createRoot(document.getElementById("root")).render(reactHeading);
+/* REACT with JSX  */
+const jsxHeading = (<h2>Hello JSX!</h2>);
+
+ReactDOM.createRoot(document.getElementById("root")).render(jsxHeading);
 
 
 // console.log("React Element", reactHeading)

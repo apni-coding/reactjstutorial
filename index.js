@@ -1,14 +1,19 @@
-function Name(){
+
+
+function App(){
+  var name = "vivek";
+  var age = 20
+  let demo = null;
+
+
   return (
-    <p>JSX is JavaScript XML</p>
+    <>
+    <h1>Hello {name}!</h1>
+    <p>Your age is {age}</p>
+    <h1>{demo} is here</h1>
+    </>
   )
 }
 
-const App = () => (
-  <>
-    <h2 className="head">Hello JSX!</h2>
-    <p>This is created using JSX</p>
-  </>
-);
 
-ReactDOM.createRoot(document.getElementById("root")).render(<><App />  </>);
+ReactDOM.createRoot(document.getElementById("root")).render(<App />);

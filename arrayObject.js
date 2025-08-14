@@ -1,21 +1,24 @@
-function App(){
-    let arr = [1,2,3,4,5,6]
+function App() {
+  let cars = ["BMW", "Audi", "Next", "Honda", "Maruti"];
 
-    let obj = {
+  let student = [
+    {
         name:"vivek",
-        age:20
+        roleNo:1,
+        add:"abc"
     }
+  ]
 
-    return (
-        <>
-        <h1>Arrays and object in JSX</h1>
-        {
-            arr.map((num)=> <h2>{num}</h2>)
-        }
-       
-        <h2>{obj.name}</h2>
-        </>
-    )
+  return (
+    <>
+      <h1>List of Cars</h1>
+      <ul>
+        {cars.map((car, idx) => (
+          <li key={idx}>{car}</li>
+        ))}
+      </ul>
+    </>
+  );
 }
 
 ReactDOM.createRoot(document.getElementById("root")).render(<App />);

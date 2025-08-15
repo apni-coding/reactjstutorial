@@ -1,22 +1,35 @@
 function App() {
-  let cars = ["BMW", "Audi", "Next", "Honda", "Maruti"];
-
-  let student = [
-    {
-        name:"vivek",
-        roleNo:1,
-        add:"abc"
-    }
-  ]
+  let students = [
+    { id:1, name: "vivek", age: 10, marks: 35 },
+    { id:2, name: "raj", age: 12, marks: 55 },
+    {id:3, name: "amit", age: 11, marks: 75 },
+    { id:4, name: "neha", age: 10, marks: 90 },
+  ];
 
   return (
     <>
-      <h1>List of Cars</h1>
-      <ul>
-        {cars.map((car, idx) => (
-          <li key={idx}>{car}</li>
-        ))}
-      </ul>
+      <h1>Displaying Student's Information</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>NAME</th>
+            <th>AGE</th>
+            <th>MARKS</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            students.map((item)=>(
+              <tr key={item.id}>
+                <td>{item.name}</td>
+                <td>{item.age}</td>
+                <td>{item.marks}</td>
+              </tr>
+            ))
+          }
+        </tbody>
+
+      </table>
     </>
   );
 }

@@ -1,9 +1,9 @@
-
 function App() {
-  let loggedIn = false;
+  let loggedIn = true;
   return (
     <>
-      <h1>Hello {loggedIn ? "User" : "Alexa" }!</h1>
+      <h1>Hello {loggedIn ? "Alexa" : "User"}!</h1>
+      {loggedIn && <p>Welcome to the portal</p>}
     </>
   );
 }

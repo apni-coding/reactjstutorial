@@ -1,10 +1,13 @@
 let score = 0;
 let wicket = 0;
+let ballWiseRes = [];
 
 function App() {
   function addScore(num) {
     if (wicket < 10) {
       score += num;
+      ballWiseRes.push(num);
+      console.log(ballWiseRes)
       reactNode.render(<App />);
     }
   }
@@ -12,6 +15,8 @@ function App() {
   function addWicket() {
     if (wicket < 10) {
       wicket += 1;
+      ballWiseRes.push("W");
+      console.log(ballWiseRes)
       reactNode.render(<App />);
     }
   }
@@ -23,6 +28,7 @@ function App() {
         SCORE: {score}/{wicket}
       </h2>
       <div>
+        <button onClick={() => addScore(0)}>0</button>
         <button onClick={() => addScore(1)}>1</button>
         <button onClick={() => addScore(2)}>2</button>
         <button onClick={() => addScore(3)}>3</button>

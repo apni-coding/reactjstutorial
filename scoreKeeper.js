@@ -3,8 +3,17 @@ let wicket = 0;
 
 function App() {
   function addScore(num) {
-    score += num;
-    reactNode.render(<App />);
+    if (wicket < 10) {
+      score += num;
+      reactNode.render(<App />);
+    }
+  }
+
+  function addWicket() {
+    if (wicket < 10) {
+      wicket += 1;
+      reactNode.render(<App />);
+    }
   }
 
   return (
@@ -20,6 +29,7 @@ function App() {
         <button onClick={() => addScore(4)}>4</button>
         <button onClick={() => addScore(5)}>5</button>
         <button onClick={() => addScore(6)}>6</button>
+        <button onClick={addWicket}>Wicket</button>
       </div>
     </>
   );

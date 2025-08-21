@@ -13,6 +13,20 @@ const Result = () => (
   </>
 );
 
+function handleSubmit(event) {
+  event.preventDefault();
+}
+
+const Form = () => (
+  <>
+    <form onSubmit={handleSubmit}>
+      <input />
+      <input />
+      <button>Submit</button>
+    </form>
+  </>
+);
+
 function App() {
   function addScore(num) {
     if (wicket < 10) {
@@ -48,7 +62,10 @@ function App() {
         <button onClick={() => addScore(6)}>6</button>
         <button onClick={addWicket}>Wicket</button>
       </div>
-      <Result />
+      {/* <Result /> */}
+      <br />
+      <Form />
+      <hr />
     </>
   );
 }

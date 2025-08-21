@@ -2,12 +2,23 @@ let score = 0;
 let wicket = 0;
 let ballWiseRes = [];
 
+const Result = () => (
+  <>
+    {ballWiseRes.map((res, index) => (
+      <React.Fragment key={index}>
+        {index % 6 === 0 ? <br /> : null}
+        <span>{res === 0 ? <strong>.</strong> : res} &nbsp;&nbsp;&nbsp;</span>
+      </React.Fragment>
+    ))}
+  </>
+);
+
 function App() {
   function addScore(num) {
     if (wicket < 10) {
       score += num;
       ballWiseRes.push(num);
-      console.log(ballWiseRes)
+      console.log(ballWiseRes);
       reactNode.render(<App />);
     }
   }
@@ -16,7 +27,7 @@ function App() {
     if (wicket < 10) {
       wicket += 1;
       ballWiseRes.push("W");
-      console.log(ballWiseRes)
+      console.log(ballWiseRes);
       reactNode.render(<App />);
     }
   }
@@ -37,6 +48,7 @@ function App() {
         <button onClick={() => addScore(6)}>6</button>
         <button onClick={addWicket}>Wicket</button>
       </div>
+      <Result />
     </>
   );
 }

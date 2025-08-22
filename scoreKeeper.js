@@ -1,6 +1,7 @@
 let score = 0;
 let wicket = 0;
 let ballWiseRes = [];
+let hit = ""
 
 const Result = () => (
   <>
@@ -20,7 +21,7 @@ function handleSubmit(event) {
 const Form = () => (
   <>
     <form onSubmit={handleSubmit}>
-      <input />
+      <input value={hit}/>
       <input />
       <button>Submit</button>
     </form>
@@ -29,21 +30,15 @@ const Form = () => (
 
 function App() {
   function addScore(num) {
-    if (wicket < 10) {
-      score += num;
-      ballWiseRes.push(num);
-      console.log(ballWiseRes);
+      hit = num
       reactNode.render(<App />);
-    }
+    
   }
 
   function addWicket() {
-    if (wicket < 10) {
-      wicket += 1;
-      ballWiseRes.push("W");
-      console.log(ballWiseRes);
+      hit = "W"
       reactNode.render(<App />);
-    }
+    
   }
 
   return (

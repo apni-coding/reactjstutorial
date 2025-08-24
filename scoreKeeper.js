@@ -17,13 +17,16 @@ const Result = () => (
 
 function handleSubmit(event) {
   event.preventDefault();
-  ballWiseRes.unshift(hit);
+  // ballWiseRes.unshift(hit);
   if (hit === "W") {
     wicket += 1;
   } else {
     score += hit;
   }
-  console.log(inputRef.current.value)
+  // ballWiseRes.unshift(<span>{hit}{", "} {inputRef.current.value}</span>)
+  ballWiseRes.unshift(<span>{`${hit}, ${inputRef.current.value}`}</span>)
+  hit = 0;
+  inputRef.current.value = ""
   reactNode.render(<App />);
 }
 

@@ -16,6 +16,8 @@ const Result = () => (
 
 function handleSubmit(event) {
   event.preventDefault();
+  ballWiseRes.unshift(hit);
+  reactNode.render(<App />);
 }
 
 const Form = () => (
@@ -61,6 +63,11 @@ function App() {
       <br />
       <Form />
       <hr />
+      {
+        ballWiseRes.map((res, index)=>(
+          <p key={index}>{res}</p>
+        ))
+      }
     </>
   );
 }

@@ -16,7 +16,26 @@ class MovieCard extends Component {
 
             <div className="footer">
               <div className="rating">8.9</div>
-              <div className="stars">star</div>
+              <div className="star-dis">
+                <img
+                alt="decrease"
+                src="https://cdn-icons-png.flaticon.com/128/2801/2801932.png"
+                className="str-btn"
+                />
+
+                <img 
+                alt="star" 
+                src="https://cdn-icons-png.flaticon.com/128/1828/1828884.png" 
+                className="stars"
+                />
+
+                 <img
+                alt="increase"
+                src="https://cdn-icons-png.flaticon.com/128/1828/1828925.png"
+                className="str-btn"
+                />
+                <span>0</span>
+              </div>
               <button className="favourite-btn">Favourite</button>
               <button className="cart-btn">Add to cart</button>
             </div>

@@ -7,15 +7,28 @@ class MovieCard extends Component {
      title:"The Avengers!" ,
      plot:"Supernatural powers show in the movie.",
      price:199,
-     rating:8.9
+     rating:8.9,
+     stars:0
     }
     // this.addStars = this.addStars.bind(this)
   }
   addStars = () => {
-    console.log("this.state", this.state)
+    // this.state.stars += 0.5;
+
+    //Form1
+    // this.setState({
+    //   stars: this.state.stars + 0.5
+    // })
+    
+    //Form2
+    this.setState((prevState)=>{
+      return {
+        stars: prevState.stars + 0.5
+      }
+    })
   }
   render() {
-    const {title, plot, price, rating} = this.state;
+    const {title, plot, price, rating, stars} = this.state;
     return (
       <div className="main">
         <div className="movie-card">
@@ -49,7 +62,7 @@ class MovieCard extends Component {
                 className="str-btn"
                 onClick={this.addStars}
                 />
-                <span>0</span>
+                <span>{stars}</span>
               </div>
               <button className="favourite-btn">Favourite</button>
               <button className="cart-btn">Add to cart</button>

@@ -13,19 +13,23 @@ class MovieCard extends Component {
     // this.addStars = this.addStars.bind(this)
   }
   addStars = () => {
-    // this.state.stars += 0.5;
-
-    //Form1
-    // this.setState({
-    //   stars: this.state.stars + 0.5
-    // })
-    
-    //Form2
+    if(this.state.stars >=5){
+      return;
+    }
     this.setState((prevState)=>{
       return {
         stars: prevState.stars + 0.5
       }
     })
+  }
+  desStars = () => {
+    if(this.state.stars <=0){
+      return;
+    }
+    this.setState({
+      stars: this.state.stars - 0.5
+    }, ()=>console.log("stars inside callback:", this.state.stars)) 
+    console.log("stars:", this.state.stars)
   }
   render() {
     const {title, plot, price, rating, stars} = this.state;
@@ -48,6 +52,7 @@ class MovieCard extends Component {
                 alt="decrease"
                 src="https://cdn-icons-png.flaticon.com/128/2801/2801932.png"
                 className="str-btn"
+                onClick={this.desStars}
                 />
 
                 <img 

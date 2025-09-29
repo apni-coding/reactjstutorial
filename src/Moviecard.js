@@ -1,43 +1,56 @@
 import { Component } from "react";
 
 class MovieCard extends Component {
-  constructor(){
-    super()
+  constructor() {
+    super();
     this.state = {
-     title:"The Avengers!" ,
-     plot:"Supernatural powers show in the movie.",
-     price:199,
-     rating:8.9,
-     stars:0
-    }
+      title: "The Avengers!",
+      plot: "Supernatural powers show in the movie.",
+      price: 199,
+      rating: 8.9,
+      stars: 0,
+      fav: false,
+    };
     // this.addStars = this.addStars.bind(this)
   }
   addStars = () => {
-    if(this.state.stars >=5){
+    if (this.state.stars >= 5) {
       return;
     }
-    this.setState((prevState)=>{
+    this.setState((prevState) => {
       return {
-        stars: prevState.stars + 0.5
-      }
-    })
-  }
+        stars: prevState.stars + 0.5,
+      };
+    });
+  };
   desStars = () => {
-    if(this.state.stars <=0){
+    if (this.state.stars <= 0) {
       return;
     }
+    this.setState(
+      {
+        stars: this.state.stars - 0.5,
+      },
+      () => console.log("stars inside callback:", this.state.stars)
+    );
+    console.log("stars:", this.state.stars);
+  };
+
+  handleFav = () => {
     this.setState({
-      stars: this.state.stars - 0.5
-    }, ()=>console.log("stars inside callback:", this.state.stars)) 
-    console.log("stars:", this.state.stars)
-  }
+      fav: !this.state.fav,
+    });
+  };
   render() {
-    const {title, plot, price, rating, stars} = this.state;
+    const { title, plot, price, rating, stars, fav } = this.state;
     return (
       <div className="main">
         <div className="movie-card">
           <div className="left">
-            <img src="https://m.media-amazon.com/images/M/MV5BNDYxNjQyMjAtNTdiOS00NGYwLWFmNTAtNThmYjU5ZGI2YTI1XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg" alt="poster" />
+            <img
+              src="https://m.media-amazon.com/images/M/MV5BNDYxNjQyMjAtNTdiOS00NGYwLWFmNTAtNThmYjU5ZGI2YTI1XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg"
+              alt="poster"
+            />
           </div>
 
           <div className="right">
@@ -49,32 +62,40 @@ class MovieCard extends Component {
               <div className="rating">{rating}</div>
               <div className="star-dis">
                 <img
-                alt="decrease"
-                src="https://cdn-icons-png.flaticon.com/128/2801/2801932.png"
-                className="str-btn"
-                onClick={this.desStars}
-                />
-
-                <img 
-                alt="star" 
-                src="https://cdn-icons-png.flaticon.com/128/1828/1828884.png" 
-                className="stars"
+                  alt="decrease"
+                  src="https://cdn-icons-png.flaticon.com/128/2801/2801932.png"
+                  className="str-btn"
+                  onClick={this.desStars}
                 />
 
                 <img
-                alt="increase"
-                src="https://cdn-icons-png.flaticon.com/128/1828/1828925.png"
-                className="str-btn"
-                onClick={this.addStars}
+                  alt="star"
+                  src="https://cdn-icons-png.flaticon.com/128/1828/1828884.png"
+                  className="stars"
+                />
+
+                <img
+                  alt="increase"
+                  src="https://cdn-icons-png.flaticon.com/128/1828/1828925.png"
+                  className="str-btn"
+                  onClick={this.addStars}
                 />
                 <span>{stars}</span>
               </div>
-              <button className="favourite-btn">Favourite</button>
+              {/* {
+                fav ? <button className="unfavourite-btn" onClick={this.handleFav}>Un-Favourite</button> :
+                <button className="favourite-btn" onClick={this.handleFav}>Favourite</button>
+              } */}
+              <button
+                className={fav ? "unfavourite-btn" : "favourite-btn"}
+                onClick={this.handleFav}
+              >
+                {fav ? "Un-Favourite" : "Favourite"}
+              </button>
+
               <button className="cart-btn">Add to cart</button>
             </div>
-
           </div>
-
         </div>
       </div>
     );

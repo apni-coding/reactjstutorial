@@ -1,9 +1,13 @@
 import MovieCard from "./Moviecard";
+import MovieList from "./MovieList";
 
 
 function App() {
   return (
-   <MovieCard />
+    <>
+    <h1>Movie App</h1>
+    <MovieList />
+   </>
   );
 }
 

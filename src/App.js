@@ -5,7 +5,7 @@ function App() {
     <>
     <Student name= "Alexa" marks={80}/>
     <Student name= "Siri" marks={70}/>
-    <Student name= "Google" marks={89}/>
+    <Student  />
    </>
   );
 }

@@ -1,12 +1,11 @@
-import Student from "./Student";
+import MovieList from "./MovieList";
 
 function App() {
   return (
     <>
-    <Student name= "Alexa" marks={80}/>
-    <Student name= "Siri" marks={70}/>
-    <Student  />
-   </>
+      <h1>Movie App</h1>
+      <MovieList />
+    </>
   );
 }
 

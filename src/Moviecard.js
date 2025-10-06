@@ -1,19 +1,7 @@
 import { Component } from "react";
 
 class MovieCard extends Component {
-  constructor() {
-    super();
-    this.state = {
-      title: "The Avengers!",
-      plot: "Supernatural powers show in the movie.",
-      price: 199,
-      rating: 8.9,
-      stars: 0,
-      fav: false,
-      isIncart:false
-    };
-    // this.addStars = this.addStars.bind(this)
-  }
+
   addStars = () => {
     if (this.state.stars >= 5) {
       return;
@@ -43,13 +31,13 @@ class MovieCard extends Component {
     });
   };
 
-  handleAddToCart = () => {
+handleAddToCart = () => {
     this.setState({
       isIncart: !this.state.isIncart,
     });
   };
   render() {
-    const { title, plot, price, rating, stars, fav, isIncart } = this.state;
+    const { title, plot, price, rating, stars, fav, isIncart } = this.props.movies;
     return (
       <div className="main">
         <div className="movie-card">
@@ -61,7 +49,7 @@ class MovieCard extends Component {
           </div>
 
           <div className="right">
-            <div className="title">{this.state.title}</div>
+            <div className="title">{title}</div>
             <div className="plot">{plot}</div>
             <div className="price">Rs {price}</div>
 

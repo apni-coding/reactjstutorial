@@ -73,7 +73,7 @@ handleAddToCart = () => {
                   alt="increase"
                   src="https://cdn-icons-png.flaticon.com/128/1828/1828925.png"
                   className="str-btn"
-                  onClick={this.addStars}
+                  onClick={()=>this.props.addStars(this.props.movies)}
                 />
                 <span>{stars}</span>
               </div>

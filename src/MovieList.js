@@ -63,12 +63,24 @@ class MovieList extends Component {
       ],
     };
   }
+
+  handleIncStar = (movie)=>{
+    const {movies} = this.state;
+    const mid = movies.indexOf(movie);
+    if(movies[mid].stars >=5){
+      return;
+    }
+    movies[mid].stars += 0.5;
+    this.setState({
+      movies
+    })
+  }
   render() {
     const { movies } = this.state;
     return (
       <>
         {movies.map((movie, indx) => (
-          <MovieCard movies={movie} key={indx} />
+          <MovieCard movies={movie} key={indx} addStars={this.handleIncStar}/>
         ))}
       </>
     );

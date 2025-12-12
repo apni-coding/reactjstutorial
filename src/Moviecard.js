@@ -1,7 +1,6 @@
 import { Component } from "react";
 
 class MovieCard extends Component {
-
   addStars = () => {
     if (this.state.stars >= 5) {
       return;
@@ -31,13 +30,15 @@ class MovieCard extends Component {
     });
   };
 
-handleAddToCart = () => {
+  handleAddToCart = () => {
     this.setState({
       isIncart: !this.state.isIncart,
     });
   };
   render() {
-    const { title, plot, price, rating, stars, fav, isIncart } = this.props.movies;
+    const { movies, addStars, decStars, toggleFav, toggleCart } = this.props;
+    const { title, plot, price, rating, stars, fav, isIncart } =
+      this.props.movies;
     return (
       <div className="main">
         <div className="movie-card">
@@ -60,7 +61,9 @@ handleAddToCart = () => {
                   alt="decrease"
                   src="https://cdn-icons-png.flaticon.com/128/2801/2801932.png"
                   className="str-btn"
-                  onClick={this.desStars}
+                  onClick={() => {
+                    decStars(movies);
+                  }}
                 />
 
                 <img
@@ -73,7 +76,7 @@ handleAddToCart = () => {
                   alt="increase"
                   src="https://cdn-icons-png.flaticon.com/128/1828/1828925.png"
                   className="str-btn"
-                  onClick={()=>this.props.addStars(this.props.movies)}
+                  onClick={() => addStars(movies)}
                 />
                 <span>{stars}</span>
               </div>
@@ -83,14 +86,14 @@ handleAddToCart = () => {
               } */}
               <button
                 className={fav ? "unfavourite-btn" : "favourite-btn"}
-                onClick={this.handleFav}
+                onClick={() => toggleFav(movies)}
               >
                 {fav ? "Un-Favourite" : "Favourite"}
               </button>
 
               <button
                 className={isIncart ? "unfavourite-btn" : "cart-btn"}
-                onClick={this.handleAddToCart}
+                onClick={() => toggleCart(movies)}
               >
                 {isIncart ? "Remove from Cart" : "Add to cart"}
               </button>

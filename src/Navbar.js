@@ -1,16 +1,28 @@
 import React, { Component } from "react";
+import styled from 'styled-components';
+
+const Nav = styled.div`
+background:#4267b2;
+height:70px;
+`;
+
+const Title = styled.div`
+font-size:30;
+color:#fff;
+margin-left:20
+`
 
 export default class Navbar extends Component {
   render() {
     return (
       <>
-        <div style={styles.nav}>
-          <div className="title" style={styles.title}>Movie-App</div>
+        <Nav>
+          <Title>Movie-App</Title>
           <div style={styles.cartContainer}>
             <img alt="cart icon" src="https://cdn-icons-png.flaticon.com/128/891/891462.png" style={styles.cartIcon}/>
             <span style={styles.cartCount}>0</span>
           </div>
-        </div>
+        </Nav>
       </>
     );
   }

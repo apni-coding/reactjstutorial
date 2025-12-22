@@ -122,3 +122,23 @@ footer.starCount {
   display: flex;
   justify-content: space-between;
 }
+
+
+.wrapper{
+  width: 100%;
+  height: auto;
+  border-width: 4px;
+  border-style: solid;
+  border-color: black;
+  background-color: #251bb1;
+  color: wheat;
+  margin: 20px;
+  padding: 30px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.head-btn{
+  /* width: 80px;
+  height: 30px; */
+}

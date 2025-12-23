@@ -1,11 +1,10 @@
 import React from 'react';
-import headStyle from './headerOne.module.css'
-console.log(headStyle)
+import './style.scss'
 export default function HeaderOne() {
   return (
-    <div className='wrapper'>
+    <div className='headerWrapper'>
       <h1>Heading1</h1>
-      <button className={headStyle.headBtn}>Button1</button>
+      <button className="head-btn">Button1</button>
     </div>
   )
 }

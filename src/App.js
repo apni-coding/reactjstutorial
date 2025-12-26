@@ -37,11 +37,17 @@ class App extends Component {
   };
 
   handleToggleCart = (movie) => {
-    const { movies } = this.state;
+    let { movies, cartCount } = this.state;
     const mid = movies.indexOf(movie);
     movies[mid].isIncart = !movies[mid].isIncart;
+    if(movies[mid].isIncart){
+      cartCount += 1;
+    }else{
+       cartCount -= 1;
+    }
     this.setState({
       movies,
+      cartCount
     });
   };
 
@@ -56,7 +62,7 @@ class App extends Component {
   render() {
     return (
       <>
-        <Navbar />
+        <Navbar cartCount={this.state.cartCount}/>
         <MovieList
           movies={this.state.movies}
           handleIncStar={this.handleIncStar}

@@ -1,44 +1,10 @@
-import { Component } from "react";
 
-class MovieCard extends Component {
-  addStars = () => {
-    if (this.state.stars >= 5) {
-      return;
-    }
-    this.setState((prevState) => {
-      return {
-        stars: prevState.stars + 0.5,
-      };
-    });
-  };
-  desStars = () => {
-    if (this.state.stars <= 0) {
-      return;
-    }
-    this.setState(
-      {
-        stars: this.state.stars - 0.5,
-      },
-      () => console.log("stars inside callback:", this.state.stars)
-    );
-    console.log("stars:", this.state.stars);
-  };
 
-  handleFav = () => {
-    this.setState({
-      fav: !this.state.fav,
-    });
-  };
-
-  handleAddToCart = () => {
-    this.setState({
-      isIncart: !this.state.isIncart,
-    });
-  };
-  render() {
-    const { movies, addStars, decStars, toggleFav, toggleCart } = this.props;
+function MovieCard(props) {
+ 
+    const { movies, addStars, decStars, toggleFav, toggleCart } = props;
     const { title, plot, price, rating, stars, fav, isIncart } =
-      this.props.movies;
+      props.movies;
     return (
       <div className="main">
         <div className="movie-card">
@@ -102,7 +68,7 @@ class MovieCard extends Component {
         </div>
       </div>
     );
-  }
+  
 }
 
 export default MovieCard;

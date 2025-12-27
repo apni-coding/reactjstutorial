@@ -1,14 +1,13 @@
-import { Component } from "react";
 import MovieCard from "./Moviecard";
-class MovieList extends Component {
-  render() {
+
+function MovieList(props){
     const {
       movies,
       handleIncStar,
       handleDecStar,
       handleToggleFAv,
       handleToggleCart,
-    } = this.props;
+    } = props;
 
     return (
       <>
@@ -24,7 +23,6 @@ class MovieList extends Component {
         ))}
       </>
     );
-  }
 }
 
 export default MovieList;

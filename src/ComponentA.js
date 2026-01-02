@@ -17,6 +17,9 @@ class ComponentA extends Component{
 
     componentDidMount(){
         console.log("ComponentA componentDidMount")
+         this.setState({
+            name:"CA"
+        })
     }
 
     render(){

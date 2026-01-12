@@ -3,7 +3,10 @@ import React from "react";
 export default class Timer extends React.Component {
   constructor() {
     super();
-
+    this.state = {
+      time: 0,
+    };
+    this.timer = null;
     console.log("TimerOne Constructor");
   }
 
@@ -14,6 +17,10 @@ export default class Timer extends React.Component {
 
   componentDidMount() {
     console.log("TimerOne componentDidMount");
+    console.log("______________________________________");
+    this.timer = setInterval(() => {
+      this.setState((prevState) => ({ time: prevState.time + 1 }));
+    }, 1000);
   }
 
   shouldComponentUpdate() {
@@ -29,10 +36,19 @@ export default class Timer extends React.Component {
 
   componentDidUpdate() {
     console.log("TimerOne componentDidUpdate");
+    console.log("______________________________________");
   }
 
   render() {
-    console.log("TimerOne Render")
-    return <h1>Timer</h1>;
+    console.log("TimerOne Render");
+    console.log(this.state.time);
+    return (
+      <>
+        <h1>
+          Time Spent:{" "}
+          {new Date(this.state.time * 1000).toISOString().slice(11, 19)}
+        </h1>
+      </>
+    );
   }
 }

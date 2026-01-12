@@ -39,7 +39,7 @@ class ComponentA extends Component{
                 })
             }
             </ul>
-            <ComponentB />
+            {/* <ComponentB /> */}
             </>
         )
     }

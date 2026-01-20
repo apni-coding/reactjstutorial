@@ -7,25 +7,25 @@ class App extends React.Component{
     super();
 
     this.state={
-      mount: true
+      play: false
     }
   }
 
-  handleMount = ()=>{
-    this.setState((prevState) =>({mount: !prevState.mount}))
+  handleClick = ()=>{
+    this.setState((prevState) =>({play: !prevState.play}))
   }
   render(){
     return(
       <>
-      <button onClick={this.handleMount}>
+      <Timer timerOne={this.state.play }/>
+      <button onClick={this.handleClick}>
         {
-          this.state.mount ? "Un-Mount" : "MOUNT"
+          this.state.play ? "Pause" : "Play"
         }
       </button>
-      {
-        this.state.mount ? <Timer /> : null
-      }
+      
       </>
+
     )
   }
 }

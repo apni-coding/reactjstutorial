@@ -19,7 +19,7 @@ class ComponentA extends Component{
 
     componentDidMount(){
         console.log("ComponentA componentDidMount")
-       fetch('https://jsonplaceholder.typicode.com/users')
+       fetch('https://jsonplaceholder.typicode.com/user')
       .then(response => response.json())
       .then(data => this.setState({data}))
     }

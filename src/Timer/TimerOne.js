@@ -20,9 +20,10 @@ export default class Timer extends React.Component {
     console.log("______________________________________");
   }
 
-  shouldComponentUpdate() {
+  shouldComponentUpdate(nextProps, nextState) {
     console.log("TimerOne shouldComponentUpdate");
-    return true;
+
+    return nextProps.timerOne !== this.props.timerOne || nextState.time % 5 === 0;
   }
 
   getSnapshotBeforeUpdate() {

@@ -4,7 +4,7 @@ export default class Input extends React.Component {
   constructor(){
     super()
     this.state={
-      name:"",
+      name:"Harry",
       lastName:""
     }
   }
@@ -19,6 +19,15 @@ export default class Input extends React.Component {
     this.setState({
       lastName: e.target.value
     })
+  }
+  //Called immediately after a component is mounted.
+  componentDidMount(){
+    document.title = this.state.name + " " + this.state.lastName
+  }
+
+  //Called immediately after updating occurs. Not called for the initial render.
+  componentDidUpdate(){
+    document.title = this.state.name + " " + this.state.lastName
   }
   render() {
     return (

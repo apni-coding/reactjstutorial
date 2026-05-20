@@ -1,8 +1,20 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Input() {
-  const [name, setName] = useState(null)
+  const [name, setName] = useState("Harray")
   const [lastName, setLastName] = useState('')
+
+  //CDM CDU
+  useEffect(()=>{
+    document.title = name + " " + lastName
+  }, [lastName, name])
+  /*
+  No Dep -> Every time func call
+  []-> One time render
+  [lastName] -> whenever last name change detect
+  [lastName, name, xyz] ->  whenever last lastName, name, xyz change detect
+
+  */
   return (
     <>
       <div className="section">

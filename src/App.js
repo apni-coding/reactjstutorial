@@ -1,9 +1,11 @@
+import Counter from "./Components/Counter";
 import Input from "./Components/InputWithFunction";
 
 function App() {
   return (
     <>
-      <Input />
+      {/* <Input /> */}
+      <Counter />
     </>
   );
 }

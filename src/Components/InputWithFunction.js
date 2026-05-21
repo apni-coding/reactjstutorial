@@ -4,17 +4,21 @@ export default function Input() {
   const [name, setName] = useState("Harray")
   const [lastName, setLastName] = useState('')
 
-  //CDM CDU
+ 
   useEffect(()=>{
     document.title = name + " " + lastName
   }, [lastName, name])
-  /*
-  No Dep -> Every time func call
-  []-> One time render
-  [lastName] -> whenever last name change detect
-  [lastName, name, xyz] ->  whenever last lastName, name, xyz change detect
 
-  */
+  useEffect(()=>{
+    const interval = setInterval(()=>{
+      console.log("Window Width: ", window.innerWidth);
+    }, 2000)
+
+    return ()=>{
+      clearInterval(interval)
+    }
+  })
+ 
   return (
     <>
       <div className="section">

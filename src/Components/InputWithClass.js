@@ -23,11 +23,18 @@ export default class Input extends React.Component {
   //Called immediately after a component is mounted.
   componentDidMount(){
     document.title = this.state.name + " " + this.state.lastName
+    this.timer = setInterval(() => {
+      console.log("Window Width: ", window.innerWidth);
+    }, 2000);
   }
 
   //Called immediately after updating occurs. Not called for the initial render.
   componentDidUpdate(){
     document.title = this.state.name + " " + this.state.lastName
+  }
+
+  componentWillUnmount(){
+    clearInterval(this.timer)
   }
   render() {
     return (

@@ -1,12 +1,9 @@
-import Counter from "./Components/Counter";
-import Input from "./Components/InputWithFunction";
-// import Input from "./Components/InputWithClass";
+import Blog from "./Components/Blog";
 
 function App() {
   return (
     <>
-      <Input />
-      {/* <Counter /> */}
+      <Blog />
     </>
   );
 }

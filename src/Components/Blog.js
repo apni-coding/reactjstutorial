@@ -1,10 +1,22 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 export default function Blog() {
   // const [title, setTitle] = useState("");
   // const [content, setContent] = useState("");
   const [formData, setFormData] = useState({title:"", content:""})
   const [blogs, setBlogs] = useState([]);
   const titleRef = useRef(null)
+
+  useEffect(()=>{
+    titleRef.current.focus()
+  }, [])
+
+  useEffect(()=>{
+    if(blogs.length && blogs[0].title){
+      document.title = blogs[0].title
+    }else{
+      document.title = "No blog"
+    }
+  }, [blogs])
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -47,6 +59,7 @@ export default function Blog() {
               className="input content"
               placeholder="Content of the Blog goes here.."
               value={formData.content}
+              required
               onChange={(e) => setFormData({content: e.target.value, title: formData.title})}
             />
           </Row>

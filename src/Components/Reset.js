@@ -1,12 +1,18 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-export default function Reset(){
+export default function Reset() {
+  const [email, setEmail] = useState("");
 
-    const [email,setEmail] = useState("");
-    
-    return(
-        <>
-        <h3>Reset Password for</h3>
+  useEffect(() => {
+    let email = localStorage.getItem("email");
+    if (email) {
+      setEmail(email);
+    }
+  }, []);
+
+  return (
+    <>
+      <h3>Reset Password for</h3>
       <input
         placeholder="Enter Email"
         value={email}
@@ -21,8 +27,8 @@ export default function Reset(){
         }}
       >
         Submit
-      </button>      
+      </button>
       <br />
-        </>
-    )
+    </>
+  );
 }

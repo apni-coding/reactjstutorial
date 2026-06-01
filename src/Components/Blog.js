@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from "react";
+import { db } from "../firebaseInit";
 export default function Blog() {
   // const [title, setTitle] = useState("");
   // const [content, setContent] = useState("");

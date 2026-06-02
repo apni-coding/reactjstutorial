@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { db } from "../firebaseInit";
-import { collection, addDoc } from "firebase/firestore";
+import { collection, addDoc, getDocs } from "firebase/firestore";
 
 export default function Blog() {
   // const [title, setTitle] = useState("");
@@ -11,6 +11,24 @@ export default function Blog() {
 
   useEffect(() => {
     titleRef.current.focus();
+  }, []);
+
+  useEffect(() => {
+    async function fetchData() {
+      const snapShot = await getDocs(collection(db, "blogs"));
+      //       snapShot.forEach((doc) => {
+      //   // doc.data() is never undefined for query doc snapshots
+      //   console.log(doc.id, " => ", doc.data());
+      // });
+      const blogs = snapShot.docs.map((doc) => {
+        return {
+          id: doc.id,
+          ...doc.data(),
+        };
+      });
+      setBlogs(blogs);
+    }
+    fetchData();
   }, []);
 
   useEffect(() => {
@@ -30,12 +48,11 @@ export default function Blog() {
       },
       ...blogs,
     ]);
-    const docRef = await addDoc(collection(db, "blogs"), {
+    await addDoc(collection(db, "blogs"), {
       title: formData.title,
       content: formData.content,
       createdOn: new Date(),
     });
-    console.log("Document written with ID: ", docRef.id);
     // setTitle('');
     // setContent('');
     setFormData({ title: "", content: "" });

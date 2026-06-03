@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { db } from "../firebaseInit";
-import { collection, addDoc, getDocs } from "firebase/firestore";
+import { collection, addDoc, getDocs, onSnapshot } from "firebase/firestore";
 
 export default function Blog() {
   // const [title, setTitle] = useState("");
@@ -14,12 +14,22 @@ export default function Blog() {
   }, []);
 
   useEffect(() => {
-    async function fetchData() {
-      const snapShot = await getDocs(collection(db, "blogs"));
-      //       snapShot.forEach((doc) => {
-      //   // doc.data() is never undefined for query doc snapshots
-      //   console.log(doc.id, " => ", doc.data());
-      // });
+    // async function fetchData() {
+    //   const snapShot = await getDocs(collection(db, "blogs"));
+    //   //       snapShot.forEach((doc) => {
+    //   //   // doc.data() is never undefined for query doc snapshots
+    //   //   console.log(doc.id, " => ", doc.data());
+    //   // });
+    //   const blogs = snapShot.docs.map((doc) => {
+    //     return {
+    //       id: doc.id,
+    //       ...doc.data(),
+    //     };
+    //   });
+    //   setBlogs(blogs);
+    // }
+    // fetchData();
+    const blogs = onSnapshot(collection(db, "blogs"), (snapShot) => {
       const blogs = snapShot.docs.map((doc) => {
         return {
           id: doc.id,
@@ -27,8 +37,7 @@ export default function Blog() {
         };
       });
       setBlogs(blogs);
-    }
-    fetchData();
+    });
   }, []);
 
   useEffect(() => {
@@ -41,13 +50,13 @@ export default function Blog() {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    setBlogs([
-      {
-        title: formData.title,
-        content: formData.content,
-      },
-      ...blogs,
-    ]);
+    // setBlogs([
+    //   {
+    //     title: formData.title,
+    //     content: formData.content,
+    //   },
+    //   ...blogs,
+    // ]);
     await addDoc(collection(db, "blogs"), {
       title: formData.title,
       content: formData.content,

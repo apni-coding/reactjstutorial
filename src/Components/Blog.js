@@ -1,6 +1,13 @@
 import { useState, useRef, useEffect } from "react";
 import { db } from "../firebaseInit";
-import { collection, addDoc, getDocs, onSnapshot } from "firebase/firestore";
+import {
+  collection,
+  addDoc,
+  getDocs,
+  onSnapshot,
+  deleteDoc,
+  doc,
+} from "firebase/firestore";
 
 export default function Blog() {
   // const [title, setTitle] = useState("");
@@ -68,9 +75,10 @@ export default function Blog() {
     titleRef.current.focus();
   }
 
-  const removeBlog = (i) => {
-    const filterBlogs = blogs.filter((blog, index) => i !== index);
-    setBlogs(filterBlogs);
+  const removeBlog = async (documentId) => {
+    // const filterBlogs = blogs.filter((blog, index) => i !== index);
+    // setBlogs(filterBlogs);
+    await deleteDoc(doc(db, "blogs", documentId));
   };
 
   return (
@@ -118,7 +126,7 @@ export default function Blog() {
           <h3>{blog.title}</h3>
           <p>{blog.content}</p>
           <div className="blog-btn">
-            <button className="btn remove" onClick={() => removeBlog(i)}>
+            <button className="btn remove" onClick={() => removeBlog(blog.id)}>
               Delete
             </button>
           </div>

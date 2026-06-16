@@ -40,3 +40,8 @@ a{
   text-decoration: none;
   color: black ;
 }
+
+.active{
+  color: blue;
+  font-weight: 600;
+}

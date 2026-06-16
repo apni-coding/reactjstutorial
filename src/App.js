@@ -6,6 +6,7 @@ import Items from "./pages/Items";
 import { Routes, Route } from "react-router";
 import Mobile from "./pages/Mobile";
 import Laptop from "./pages/Laptop";
+import ItemsDetails from "./pages/ItemsDetails";
 function App() {
   const [page, setPage] = useState("home");
   return (
@@ -18,10 +19,11 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/items" element={<Items />}>
-          <Route path="mobile" element={<Mobile />} />
-          <Route path="laptop" element={<Laptop />} />
-        </Route>
+        <Route path="/items" element={<Items />} />
+        <Route path="/items/:id" element={<ItemsDetails />} />
+
+          
+        
       </Routes>
       {/* Footer */}
     </>

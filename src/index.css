@@ -29,7 +29,7 @@ h1{
   background-color: lightblue;
 }
 
-h4{
+.nav a{
   margin:2rem;
   width:max-content;
   font-size: 1.5rem;

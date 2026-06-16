@@ -1,10 +1,13 @@
-function Navbar({setPage}) {
+import { Link } from "react-router";
+
+
+function Navbar() {
   return (
     <>
       <div className="nav">
-          <h4 onClick={()=>setPage("home")}>HOME</h4>
-          <h4 onClick={()=>setPage("about")}>ABOUT</h4>
-          <h4 onClick={()=>setPage("items")}>ITEMS</h4>
+          <Link to="/">HOME</Link>
+          <Link to="/about">ABOUT</Link>
+          <Link to="/items">ITEMS</Link>
       </div>
     </>
   );

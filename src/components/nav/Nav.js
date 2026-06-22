@@ -1,5 +1,6 @@
 import React from "react";
 import style from "./Nav.module.css";
+import { Outlet } from "react-router";
 
 function Nav() {
   return (
@@ -17,6 +18,7 @@ function Nav() {
           <button>Courses</button>
         </div>
       </div>
+      <Outlet />
     </nav>
   );
 }

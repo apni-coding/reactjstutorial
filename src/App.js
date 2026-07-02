@@ -4,6 +4,7 @@ import Courses from "./pages/courses/Courses";
 import { Route, Routes } from "react-router";
 import Details from "./pages/details/Details";
 import Learn from "./pages/learn/Learn";
+import Chapter from "./pages/chapter/Chapter";
 
 function App() {
   return (
@@ -15,7 +16,9 @@ function App() {
         <Route path="/" element={<Nav />}>
           <Route path="/courses" element={<Courses />} />
           <Route path="/courses/:id" element={<Details />} />
-          <Route path="/learn/:courseId" element={<Learn />} />
+          <Route path="/learn/:courseId" element={<Learn />}>
+            <Route path="chapter/:chapterId" element={<Chapter />} />
+          </Route>
         </Route>
       </Routes>
     </div>

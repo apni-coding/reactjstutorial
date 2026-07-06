@@ -1,28 +1,7 @@
-import Hero from "./pages/hero/Hero";
-import Nav from "./components/nav/Nav";
-import Courses from "./pages/courses/Courses";
-import { Route, Routes } from "react-router";
-import Details from "./pages/details/Details";
-import Learn from "./pages/learn/Learn";
-import Chapter from "./pages/chapter/Chapter";
+import ParentComponent from "./components/ParentComponent";
 
-function App() {
-  return (
-    <div className="App">
-      {/* <Nav />
-      <Hero />
-      <Courses /> */}
-      <Routes>
-        <Route path="/" element={<Nav />}>
-          <Route path="/courses" element={<Courses />} />
-          <Route path="/courses/:id" element={<Details />} />
-          <Route path="/learn/:courseId" element={<Learn />}>
-            <Route path="chapter/:chapterId" element={<Chapter />} />
-          </Route>
-        </Route>
-      </Routes>
-    </div>
-  );
-}
+const App = () => {
+  return <ParentComponent />;
+};
 
 export default App;

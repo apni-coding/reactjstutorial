@@ -1,14 +1,15 @@
 import GrandChildComponent from "./GrandChildComponent";
 
-const ChildComponent = (props) => (
+const ChildComponent = () => (
   <div
     style={{
-      border: `10px solid #fff`,
+      border: `10px solid #000`,
       margin: "15px",
-      padding: "10px"
+      padding: "10px",
+      width:"200PX"
     }}
   >
-    <GrandChildComponent color={props.color} />
+    <GrandChildComponent  />
   </div>
 );
 

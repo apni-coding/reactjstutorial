@@ -6,3 +6,11 @@
     color: var(--primary-color);
     padding: 1rem;
 }
+
+.buttonsWrapper{
+    
+}
+.button{
+    border: none;
+    background-color: #fff;
+}

@@ -9,6 +9,9 @@ function Navbar() {
     <div className={styles.container}>
       <h1>Total : &#x20B9; {value.total}</h1>
       <h1>Items: {value.item}</h1>
+      <div className={styles.buttonsWrapper}>
+        <button className={styles.button} onClick={()=> value.clear()}>Reset</button>
+      </div>
     </div>
   );
 }

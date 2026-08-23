@@ -1,10 +1,18 @@
+import data from "../data/itemData";
 import styles from "../styles/Item.module.css";
 import ItemCard from "./ItemCard";
 
 function Items() {
   return (
     <div className={styles.wrapper}>
-      <ItemCard name="Apple" price={199} />
+      {data.map((item) => (
+        <ItemCard
+          name={item.name}
+          price={item.price}
+          key={item.id}
+          id={item.id}
+        />
+      ))}
     </div>
   );
 }

@@ -31,7 +31,7 @@ function todoReducer(state = inititalState, action) {
         case TOGGLE_TODO:
             return {
                 ...state,
-                todos: state.todo.map((todo, i)=>{
+                todo: state.todo.map((todo, i)=>{
                     if(i === action.index){
                         todo.complted = !todo.complted;
                     }
@@ -43,3 +43,14 @@ function todoReducer(state = inititalState, action) {
     }
 
 }
+
+// creating Store
+const store = redux.createStore(todoReducer);
+
+// dipatch actions -> redux state update
+store.dispatch(addTodo("Study at 8"));
+store.dispatch(addTodo("Office at 9"));
+store.dispatch(toggleToDo(0));
+
+// Read data from store state
+console.log(store.getState())

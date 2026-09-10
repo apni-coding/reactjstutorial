@@ -31,3 +31,4 @@ function todoReducer(state = intitialState, action) {
     }
 
 }
+export default todoReducer;

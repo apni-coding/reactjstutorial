@@ -1,17 +1,18 @@
 import { useState } from "react";
 import TodoForm from "./components/ToDoForm/ToDoForm";
 import TodoList from "./components/ToDoList/ToDoList";
-
+import { Provider } from 'react-redux'
 import './App.css';
+import store from './store'
 
 function App() {
   const [todos, setTodos] = useState([]);
 
   const createTodo = (text) => {
-    setTodos([...todos, { id: todos.length + 1, text, completed: false}]);
+    setTodos([...todos, { id: todos.length + 1, text, completed: false }]);
   };
 
-  const toggleTodo = (index)=>{
+  const toggleTodo = (index) => {
     const list = [...todos];
     list[index].completed = !list[index].completed;
     setTodos(list);
@@ -20,9 +21,11 @@ function App() {
   return (
     <div>
       <h1>To Do App</h1>
-
-      <TodoForm onCreateTodo={createTodo} />
-      <TodoList todos={todos} onToggle={toggleTodo} />
+      {/* <XYZ /> */}
+      <Provider store={store}>
+        <TodoForm onCreateTodo={createTodo} />
+        <TodoList todos={todos} onToggle={toggleTodo} />
+      </Provider>
     </div>
   );
 }

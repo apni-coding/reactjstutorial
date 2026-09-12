@@ -6,25 +6,16 @@ import './App.css';
 import store from './store'
 
 function App() {
-  const [todos, setTodos] = useState([]);
 
-  const createTodo = (text) => {
-    setTodos([...todos, { id: todos.length + 1, text, completed: false }]);
-  };
-
-  const toggleTodo = (index) => {
-    const list = [...todos];
-    list[index].completed = !list[index].completed;
-    setTodos(list);
-  }
 
   return (
     <div>
+      
       <h1>To Do App</h1>
       {/* <XYZ /> */}
       <Provider store={store}>
-        <TodoForm onCreateTodo={createTodo} />
-        <TodoList todos={todos} onToggle={toggleTodo} />
+        <TodoForm />
+        <TodoList />
       </Provider>
     </div>
   );

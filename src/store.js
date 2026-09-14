@@ -1,7 +1,14 @@
 // const redux = require('redux');
-import { createStore } from "redux";
-import todoReducer from "./redux/reducers/todoReducer";
+import { createStore, combineReducers } from "redux";
+import {todoReducer} from "./redux/reducers/todoReducer";
+import { noteReducer } from "./redux/reducers/noteReducer";
 
-const store = createStore(todoReducer);
+
+const result = combineReducers({
+    todoReducer,
+    noteReducer
+})
+
+const store = createStore(result);
 
 export default store;

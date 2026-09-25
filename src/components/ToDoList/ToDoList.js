@@ -7,20 +7,12 @@ import { actions } from "../../redux/reducers/todoReducer";
 function ToDoList() {
 
   const todos = useSelector((state) => state.todoReducer.todos);
-  const message = useSelector((state) => state.notificationReducer.message);
-  console.log(message)
   const disptach = useDispatch();
   // const todos= store.getState().todos;
 
   return (
     <div className="container">
-      {
-        message && (
-          <div class="alert alert-success" role="alert">
-            {message}
-          </div>
-        )
-      }
+      
 
       <ul>
         {todos.map((todo, index) => (

@@ -19,10 +19,16 @@ const notificationSlice = createSlice({
     //         state.message = "Todo is created"
     //     }
     // }
-    extraReducers: (builder) => {
-        builder.addCase(actions.add, (state, action) => {
+    // extraReducers: (builder) => {
+    //     builder.addCase(actions.add, (state, action) => {
+    //         state.message = "Todo is created"
+    //     })
+    // }
+    extraReducers:{
+        // [key] : value
+        [actions.add] : (state, action)=>{
             state.message = "Todo is created"
-        })
+        }
     }
 });
 

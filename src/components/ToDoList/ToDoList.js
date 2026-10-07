@@ -3,12 +3,19 @@ import { useSelector, useDispatch } from "react-redux";
 
 import "./ToDoList.css";
 import { actions } from "../../redux/reducers/todoReducer";
+import { useEffect } from "react";
 
 function ToDoList() {
 
   const todos = useSelector((state) => state.todoReducer.todos);
   const disptach = useDispatch();
   // const todos= store.getState().todos;
+
+  useEffect(()=>{
+    fetch("http://localhost:4100/api/todos").then(res => res.json()).then(parseJson =>{
+      console.log(parseJson)
+    })
+  },[])
 
   return (
     <div className="container">

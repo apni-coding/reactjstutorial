@@ -20,6 +20,7 @@ function ToDoForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setTodoText("");
+   
     disptach(actions.add(todoText));
   };
 

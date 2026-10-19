@@ -13,9 +13,7 @@ function ToDoList() {
   // const todos= store.getState().todos;
 
   useEffect(()=>{
-    axios.get("http://localhost:4100/api/todos").then((res)=>{
-      disptach(actions.setIntialState(res.data))
-    })
+    
   },[])
 
   return (

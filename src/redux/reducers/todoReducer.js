@@ -1,14 +1,20 @@
-const { createSlice } = require("@reduxjs/toolkit")
+import axios from "axios"
+
+const { createSlice, createAsyncThunk } = require("@reduxjs/toolkit")
 
 
 
 const initialState = {
     todos: [
-
     ]
 }
 
-// creating reducer using redux toolkit
+export const getIntitialStateAsync = createAsyncThunk("todo/getInitialState", (arg, thunkAPI) => {
+    axios.get("http://localhost:4100/api/todos").then((res) => {
+        console.log(res.data)
+        thunkAPI.dispatch(actions.setIntialState(res.data))
+    })
+})
 
 const todoSlice = createSlice({
     initialState: initialState,

@@ -2,7 +2,7 @@ import { useSelector, useDispatch } from "react-redux";
 // import { toggleTodo } from "../../redux/actions/todoActions";
 
 import "./ToDoList.css";
-import { actions } from "../../redux/reducers/todoReducer";
+import { actions, getIntitialStateAsync } from "../../redux/reducers/todoReducer";
 import { useEffect } from "react";
 import axios from "axios";
 
@@ -13,7 +13,7 @@ function ToDoList() {
   // const todos= store.getState().todos;
 
   useEffect(()=>{
-    
+    disptach(getIntitialStateAsync())
   },[])
 
   return (

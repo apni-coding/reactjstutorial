@@ -9,12 +9,17 @@ const initialState = {
     ]
 }
 
-export const getIntitialStateAsync = createAsyncThunk("todo/getInitialState", (arg, thunkAPI) => {
-    axios.get("http://localhost:4100/api/todos").then((res) => {
-        console.log(res.data)
-        thunkAPI.dispatch(actions.setIntialState(res.data))
-    })
-})
+export const getIntitialStateAsync = createAsyncThunk("todo/getInitialState",
+    //     (arg, thunkAPI) => {
+    //     axios.get("http://localhost:4100/api/todos").then((res) => {
+    //         console.log(res.data)
+    //         thunkAPI.dispatch(actions.setIntialState(res.data))
+    //     })
+    // }
+    () => {
+        return axios.get("http://localhost:4100/api/todos");
+    }
+)
 
 const todoSlice = createSlice({
     initialState: initialState,
@@ -38,6 +43,11 @@ const todoSlice = createSlice({
                 return todo;
             })
         }
+    },
+    extraReducers: (builder) => {
+        builder.addCase(getIntitialStateAsync.fulfilled, (state, action) => {
+            state.todos = [...action.payload.data]
+        })
     }
 })
 

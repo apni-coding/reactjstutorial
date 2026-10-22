@@ -21,6 +21,22 @@ export const getIntitialStateAsync = createAsyncThunk("todo/getInitialState",
     }
 )
 
+export const addTodoAsync = createAsyncThunk("todo/addTodo",
+    async (payload) => {
+        const response = await fetch("http://localhost:4100/api/todos", {
+            method: "POST",
+            headers: {
+                "content-type": "application/json"
+            },
+            body: JSON.stringify({
+                text: payload,
+                completed: false
+            })
+        })
+        return response.json()
+    }
+)
+
 const todoSlice = createSlice({
     initialState: initialState,
     name: "todo",
@@ -47,6 +63,9 @@ const todoSlice = createSlice({
     extraReducers: (builder) => {
         builder.addCase(getIntitialStateAsync.fulfilled, (state, action) => {
             state.todos = [...action.payload.data]
+        })
+        .addCase(addTodoAsync.fulfilled, (state, action)=>{
+           state.todos.push(action.payload)
         })
     }
 })
